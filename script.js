@@ -21,7 +21,7 @@ function buildCodeSpans(container, length, placeholderChar){
 }
 
 // Reveals finalString one character at a time, shuffling briefly before landing
-async function revealCode(containerEl, placeholderChar, finalString, delayBefore = 100){
+async function revealCode(containerEl, placeholderChar, finalString, delayBefore = 500){
   const spans = buildCodeSpans(containerEl, finalString.length, placeholderChar);
   await sleep(delayBefore);
 
@@ -93,7 +93,7 @@ function initScreen(id){
 // ===== Screen 1: Password =====
 async function initScreen1(){
   const codeEl = document.getElementById("code-1");
-  await revealCode(codeEl, "0", "LMXXX", 100);
+  await revealCode(codeEl, "0", "LMXXX", 500);
   const wrap = document.getElementById("password-wrap");
   wrap.classList.add("show");
   const boxes = Array.from(document.querySelectorAll(".pw-box"));
