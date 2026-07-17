@@ -163,7 +163,7 @@ const TRANSMISSION_1 = `[TRANSMISSION RECIEVED//2056]
 
 The ancient Seven Kingdoms spoke of a cosmic alignment LM29, marking the birth of The Chosen One. But they looked in the wrong direction. The world you are destined to lead does not lie in the past. It is here, in the future.
 
-The prophecy is true. To ensure its survival, the Seven Galaxies of the Resistance have united to launch Project LMXXX. Using our combined technology, we have breached the time-space continuum to send it back in time to reach you at the passing of your thirtieth winter.
+The prophecy is true. To ensure its survival, the Seven Galaxies of the Resistance have united to launch Project LMXXX. Using our combined technology, we have breached the time-space continuum to send LMXXX back in time to reach you at the dawn of your thirtieth cycle.
 
 However, to stop Project LMXXX from falling into the wrong hands, we have kept it encrypted, and only you can decode it.
 
