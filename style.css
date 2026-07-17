@@ -218,6 +218,9 @@ body{
 }
 .transmission-text .bracket{ color: var(--magenta); }
 
+.transmission-text::after{
+  content:'';
+}
 
 /* ===== CTA button ===== */
 .cta-btn{

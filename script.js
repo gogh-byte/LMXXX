@@ -141,7 +141,7 @@ function wirePasswordBoxes(boxes){
 
 // ===== Screen 2: Transmission 1 =====
 const TRANSMISSION_1 = `[TRANSMISSION RECIEVED//2056]
-[SENDER: Kalyani Felis, Resistance Commander]
+[SENDER: Col.Kalyani, Resistance Commander]
 
 The ancient Seven Kingdoms spoke of a cosmic alignment LM29, marking the birth of The Chosen One. But they looked in the wrong direction. The world you are destined to lead does not lie in the past. It is here, in the future.
 
@@ -188,7 +188,7 @@ document.querySelectorAll(".answer-form").forEach(form => {
 
 // ===== Screen 6: Final =====
 const TRANSMISSION_2 = `[TRANSMISSION INCOMING // YEAR: 2056]
-[SENDER: Col. Kalyani Felis Catus, Resistance Commander]
+[SENDER: Col.Kalyani, Resistance Commander]
 
 The prophecy is true. Very soon Project LMXXX will appear before you. Keep this code safe, as it is only way to activate the Project LMXXX.
 
