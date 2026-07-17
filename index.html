@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+<title>PROJECT LMXXX</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="crt-overlay"></div>
+<div class="vignette"></div>
+
+<div class="app" id="app">
+
+  <!-- SCREEN 1 : PASSWORD -->
+  <section class="screen active" id="screen-1">
+    <div class="hud-tag">SYS // ACCESS</div>
+    <div class="code-display" id="code-1" aria-live="polite"></div>
+
+    <div class="password-wrap" id="password-wrap">
+      <div class="password-row" id="password-row">
+        <input class="pw-box" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off" data-index="0">
+        <input class="pw-box" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off" data-index="1">
+        <input class="pw-box" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off" data-index="2">
+        <input class="pw-box" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off" data-index="3">
+      </div>
+      <p class="pw-clue">A day in July; A day in May.</p>
+      <p class="pw-hint" id="pw-hint">4 digits; first two digits are a day in July, second two digits are a day in May.</p>
+    </div>
+  </section>
+
+  <!-- SCREEN 2 : TRANSMISSION 1 -->
+  <section class="screen" id="screen-2">
+    <div class="hud-tag">INCOMING TRANSMISSION</div>
+    <div class="viewport-frame">
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+      <pre class="cat-art">  /\_/\
+ ( o.o )
+  &gt; ^ &lt;
+ /  Q  \
+(___^___)</pre>
+    </div>
+    <div class="transmission-text" id="transmission-1"></div>
+    <button class="cta-btn hidden" id="btn-to-riddle-1">PROCEED TO RIDDLE #01</button>
+  </section>
+
+  <!-- SCREEN 3 : RIDDLE 1 -->
+  <section class="screen" id="screen-3">
+    <div class="riddle-shell">
+      <p class="eyebrow">DECRYPTION KEY 01 / 03</p>
+      <h1 class="riddle-heading">Riddle #01</h1>
+      <p class="riddle-body">I am hidden inside the most important year of your life; a &lsquo;miracle&rsquo; year, on which blood was born from blood. To find me, you must add all of its digits together. What am I?</p>
+      <form class="answer-form" data-answer="4" data-target="screen-4">
+        <input class="answer-box" type="text" inputmode="numeric" pattern="[0-9]*" placeholder="Enter the answer here" autocomplete="off">
+        <button type="submit" class="submit-btn">SUBMIT</button>
+        <p class="error-msg">Wrong answer. Read the riddle and try again</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- SCREEN 4 : RIDDLE 2 -->
+  <section class="screen" id="screen-4">
+    <div class="riddle-shell">
+      <p class="eyebrow">DECRYPTION KEY 02 / 03</p>
+      <h1 class="riddle-heading">Riddle #02</h1>
+      <p class="riddle-body">Visit Dover Beach to show Matthew Arnold the first prize you've won for the poetry recitation. Find the number of the line &ldquo;Glimmering and vast, out in the tranquil bay.&rdquo; and you will find me.</p>
+      <form class="answer-form" data-answer="5" data-target="screen-5">
+        <input class="answer-box" type="text" inputmode="numeric" pattern="[0-9]*" placeholder="Enter the answer here" autocomplete="off">
+        <button type="submit" class="submit-btn">SUBMIT</button>
+        <p class="error-msg">Wrong answer. Read the riddle and try again</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- SCREEN 5 : RIDDLE 3 -->
+  <section class="screen" id="screen-5">
+    <div class="riddle-shell">
+      <p class="eyebrow">DECRYPTION KEY 03 / 03</p>
+      <h1 class="riddle-heading">Riddle #03</h1>
+      <p class="riddle-body">I am resting inside a book in the cupboard. Within those pages lie the ancient history of the Padmanabhaswamy Temple. Just as the temple guards its secret vaults, page fifty-one guards me.</p>
+      <form class="answer-form" data-answer="3" data-target="screen-6">
+        <input class="answer-box" type="text" inputmode="numeric" pattern="[0-9]*" placeholder="Enter the answer here" autocomplete="off">
+        <button type="submit" class="submit-btn">SUBMIT</button>
+        <p class="error-msg">Wrong answer. Read the riddle and try again</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- SCREEN 6 : FINAL -->
+  <section class="screen" id="screen-6">
+    <div class="hud-tag">SYS // FINAL CODE</div>
+    <div class="code-display" id="code-2" aria-live="polite"></div>
+
+    <div class="viewport-frame hidden" id="final-frame">
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+      <pre class="cat-art">  /\_/\
+ ( o.o )
+  &gt; ^ &lt;
+ /  Q  \
+(___^___)</pre>
+    </div>
+    <div class="transmission-text" id="transmission-2"></div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
