@@ -21,7 +21,7 @@ function buildCodeSpans(container, length, placeholderChar){
 }
 
 // Reveals finalString one character at a time, shuffling briefly before landing
-async function revealCode(containerEl, placeholderChar, finalString, delayBefore = 3000){
+async function revealCode(containerEl, placeholderChar, finalString, delayBefore = 1000){
   const spans = buildCodeSpans(containerEl, finalString.length, placeholderChar);
   await sleep(delayBefore);
 
@@ -93,7 +93,7 @@ function initScreen(id){
 // ===== Screen 1: Password =====
 async function initScreen1(){
   const codeEl = document.getElementById("code-1");
-  await revealCode(codeEl, "0", "LMXXX", 3000);
+  await revealCode(codeEl, "0", "LMXXX", 1000);
   const wrap = document.getElementById("password-wrap");
   wrap.classList.add("show");
   const boxes = Array.from(document.querySelectorAll(".pw-box"));
@@ -140,16 +140,18 @@ function wirePasswordBoxes(boxes){
 }
 
 // ===== Screen 2: Transmission 1 =====
-const TRANSMISSION_1 = `[TRANSMISSION INCOMING // YEAR: 2056]
-[SENDER: Col. Kalyani Felis Catus, Resistance Commander]
+const TRANSMISSION_1 = `[TRANSMISSION RECIEVED//2056]
+[SENDER: Kalyani Felis, Resistance Commander]
 
-The ancient Seven Kingdoms spoke of a cosmic alignment; a moment when the golden sun of Leo burns brightest on the twenty-eighth day of the seventh month, marking the birth of The Chosen One. But they looked in the wrong direction. The world you are destined to rule does not lie in the past. Your kingdom is here, in the future.
+The ancient Seven Kingdoms spoke of a cosmic alignment LM29, marking the birth of The Chosen One. But they looked in the wrong direction. The world you are destined to lead does not lie in the past. It is here, in the future.
 
-The prophecy is true. To ensure its survival, the Seven Galaxies of the Resistance have united to launch Project LMXXX. Using our combined technology, we have breached the time-space continuum to send it back in time to reach the day marking your thirtieth winter.
+The prophecy is true. To ensure its survival, the Seven Galaxies of the Resistance have united under your leadership to launch Project LMXXX. Using our combined technology, we have breached the time-space continuum to send it back in time to reach you on the day marking the dawn of your thirtieth winter.
 
-However, to stop Project LMXXX from falling into the wrong hands, we have kept in encrypted, and only you can decode it.
+However, to stop Project LMXXX from falling into the wrong hands, we have kept it encrypted, and only you can decode it.
 
-Listen very carefully. Ahead are three riddles that only you can solve. Each one will give you a number that will unlock the next riddle. When all three riddles are solved, you will have three numbers. Keep it safe. When the day comes, the three numbers will help you activate Project LMXXX`;
+Listen very carefully! Ahead are three riddles that only you can solve. Each one will give you a number that will unlock the next riddle. 
+
+When all three riddles are solved, you will have three numbers. Keep it safe. When the day comes, the three numbers will help you activate Project LMXXX.`;
 
 async function initScreen2(){
   const textEl = document.getElementById("transmission-1");
