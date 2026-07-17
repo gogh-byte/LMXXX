@@ -39,22 +39,37 @@ async function revealCode(containerEl, placeholderChar, finalString, delayBefore
 }
 
 // Types text into el one character at a time. Preserves line breaks.
+// Bracketed HUD lines (like [TRANSMISSION...]) are colored magenta as they type, not after.
 // Auto-scrolls the page down as new text appears so the growing message stays in view.
 function typeText(el, text, speed = 18){
   return new Promise(resolve => {
-    el.textContent = "";
-    let i = 0;
+    const lines = text.split("\n");
+    const renderedLines = [];
+    let lineIndex = 0;
+    let charIndex = 0;
+    el.innerHTML = "";
+
     function step(){
-      if(i < text.length){
-        el.textContent += text[i];
-        i++;
-        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "auto" });
-        setTimeout(step, speed);
-      } else {
-        colorizeBrackets(el);
+      if(lineIndex >= lines.length){
         window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
         resolve();
+        return;
       }
+      const line = lines[lineIndex];
+      const isBracket = line.trim().startsWith("[") && line.trim().endsWith("]");
+
+      if(charIndex <= line.length){
+        const partial = line.slice(0, charIndex);
+        const partialHtml = isBracket ? `<span class="bracket">${partial}</span>` : partial;
+        el.innerHTML = renderedLines.concat(partialHtml).join("\n");
+        charIndex++;
+      } else {
+        renderedLines.push(isBracket ? `<span class="bracket">${line}</span>` : line);
+        lineIndex++;
+        charIndex = 0;
+      }
+      window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "auto" });
+      setTimeout(step, speed);
     }
     step();
   });
@@ -148,7 +163,7 @@ const TRANSMISSION_1 = `[TRANSMISSION RECIEVED//2056]
 
 The ancient Seven Kingdoms spoke of a cosmic alignment LM29, marking the birth of The Chosen One. But they looked in the wrong direction. The world you are destined to lead does not lie in the past. It is here, in the future.
 
-The prophecy is true. To ensure its survival, the Seven Galaxies of the Resistance have united under your leadership to launch Project LMXXX. Using our combined technology, we have breached the time-space continuum to send it back in time to reach you on the day marking the dawn of your thirtieth winter.
+The prophecy is true. To ensure its survival, the Seven Galaxies of the Resistance have united to launch Project LMXXX. Using our combined technology, we have breached the time-space continuum to send it back in time to reach you at the passing of your thirtieth winter.
 
 However, to stop Project LMXXX from falling into the wrong hands, we have kept it encrypted, and only you can decode it.
 
