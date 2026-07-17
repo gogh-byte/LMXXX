@@ -196,7 +196,7 @@ The Future is with you.`;
 
 async function initScreen6(){
   const codeEl = document.getElementById("code-2");
-  await revealCode(codeEl, "0", "453", 3000);
+  await revealCode(codeEl, "0", "453", 500);
   const frame = document.getElementById("final-frame");
   frame.classList.remove("hidden");
   const textEl = document.getElementById("transmission-2");
