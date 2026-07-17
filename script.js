@@ -39,6 +39,7 @@ async function revealCode(containerEl, placeholderChar, finalString, delayBefore
 }
 
 // Types text into el one character at a time. Preserves line breaks.
+// Auto-scrolls the page down as new text appears so the growing message stays in view.
 function typeText(el, text, speed = 18){
   return new Promise(resolve => {
     el.textContent = "";
@@ -47,9 +48,11 @@ function typeText(el, text, speed = 18){
       if(i < text.length){
         el.textContent += text[i];
         i++;
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "auto" });
         setTimeout(step, speed);
       } else {
         colorizeBrackets(el);
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
         resolve();
       }
     }
