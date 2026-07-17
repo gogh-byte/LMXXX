@@ -179,16 +179,16 @@ body{
 .viewport-frame{
   position:relative;
   width: 100%;
-  max-width: 260px;
+  max-width: 130px;
   border: 2px solid var(--green-dim);
   background: var(--panel);
-  padding: 24px 10px;
+  padding: 12px 5px;
   margin-bottom: 26px;
   box-shadow: 0 0 18px rgba(107,255,143,0.12) inset;
 }
 .corner{
   position:absolute;
-  width:14px; height:14px;
+  width:8px; height:8px;
   border: 2px solid var(--green);
 }
 .corner.tl{ top:-2px; left:-2px; border-right:none; border-bottom:none; }
@@ -199,7 +199,7 @@ body{
 .cat-art{
   margin:0;
   font-family: var(--term);
-  font-size: 22px;
+  font-size: 11px;
   line-height:1.15;
   color: var(--green);
   text-shadow: 0 0 8px rgba(107,255,143,0.5);
